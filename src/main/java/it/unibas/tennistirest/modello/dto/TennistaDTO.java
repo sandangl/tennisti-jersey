@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 public class TennistaDTO {
     
+    private Long id;
     private String nome;
     private ESponsor sponsor;
     private int ranking;

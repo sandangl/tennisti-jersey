@@ -18,7 +18,7 @@ import java.util.List;
 @RequestScoped
 @Path("/tennisti")
 @SecurityRequirement(name="bearerAuth")
-@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class RisorsaTennisti {
 
     @Inject
@@ -28,8 +28,7 @@ public class RisorsaTennisti {
     SecurityContext securityContext;
     
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<TennistaDTO> tennistiRanking(@QueryParam("ranking") Integer ranking){
+    public List<TennistaDTO> tennistiRanking(@QueryParam("ranking") int ranking){
         return serviceTennisti.tennistiRanking(ranking, securityContext.getUserPrincipal().getName());
     }
     

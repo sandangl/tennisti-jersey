@@ -1,8 +1,10 @@
 package it.unibas.tennistirest.modello;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class Risultato {
 
     private long id;
