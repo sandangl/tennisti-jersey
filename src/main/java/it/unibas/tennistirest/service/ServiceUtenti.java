@@ -20,11 +20,11 @@ public class ServiceUtenti {
         if(u == null){
             throw new IllegalArgumentException("Utente inesistente.");
         }
-        if(!u.getPassword().equals(utenteDto.getPassword())){
+        if(!u.getPassword().equals(utenteDto.getAuthToken())){
             throw new IllegalArgumentException("Password errata.");
         }
         UtenteDTO loggato = Mapper.map(u, UtenteDTO.class);
-        loggato.setPassword(JWTUtil.generaToken(utenteDto.getEmail()));
+        loggato.setAuthToken(JWTUtil.generaToken(utenteDto.getEmail()));
         return loggato;
     }
     

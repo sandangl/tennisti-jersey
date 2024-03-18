@@ -14,7 +14,7 @@ public class UtenteDTO {
     @Email
     private String email;
     @NotBlank
-    private String password;
+    private String authToken;
     private String nome;
     private String cognome;
 
